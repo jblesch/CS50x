@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Plan
+{% endblock %}
+
+{% block main %}
+<form action="/plan" method="POST">
+    <b>Feel free to plan your vacations by filling out the necessary information below</b>
+    <p></p>
+    <p></p>
+    <p>Be sure not to omit any important information!</p>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="vacation" name="vacation" placeholder="Vacation" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="proposal" name="proposal" placeholder="Proposal" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="start_date" name="start_date" placeholder="Start Date" type="date">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="end_date" name="end_date" placeholder="End Date" type="date">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="days_used1" name="days_used1" placeholder="Days Necessary {{ name1 }}" type="number" min = "0">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="days_used2" name="days_used2" placeholder="Days Necessary {{ name2 }}" type="number" min = "0">
+    </div>
+    <div class="mb-3">
+        <select id="status1" name="status1">
+            <option value="" selected="true" disabled="disabled">select employer status {{ name1 }}</option>
+            <option value="not proposed yet">not proposed yet</option>
+            <option value="proposed">proposed</option>
+            <option value="approved">approved</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <select id="status2" name="status2">
+            <option value="" selected="true" disabled="disabled">select employer status {{ name2 }}</option>
+            <option value="not proposed yet">not proposed yet</option>
+            <option value="proposed">proposed</option>
+            <option value="approved">approved</option>
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+{% endblock %}

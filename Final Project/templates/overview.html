@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Overview
+{% endblock %}
+
+{% block main %}
+<form action="/overview" method="POST">
+
+    <div class="mb-5">
+        <b>Please choose a year to view the respective overview</b>
+        <p></p>
+        <p></p>
+        <p>To alter or remove a planned vacation, please choose it in the drop-down menu below and confirm your selection</p>
+    </div>
+    <div class = mb-3>
+        <select id="anno" name="anno">
+                <option value="" selected disabled>Select Year</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+        </select>
+        <button class="btn btn-primary" name="anno" value="anno" type="submit">Select Year To Be Shown</button>
+    </div>
+    <div class="table-responsive text-nowrap">
+    <table class="table table-striped table-bordered" id="myTable">
+        <thead>
+            <tr>
+                <th class="text-center align-middle">Vacation</th>
+                <th class="text-center align-middle">Proposal</th>
+                <th class="text-center align-middle">Start Date</th>
+                <th class="text-center align-middle">End Date</th>
+                <th class="text-center align-middle">Status {{ name1 }}</th>
+                <th class="text-center align-middle">Status {{ name2}}</th>
+                <th class="text-center align-middle">Vacation Days Necessary {{ name1 }}</th>
+                <th class="text-center align-middle">Vacation Days Necessary {{ name2 }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table | sort(attribute='start_date') %}
+            <tr>
+                <td class="text-center align-middle">
+                        {{row ["vacation"]}}
+                </td>
+                <td class="text-center align-middle">
+                        {{row ["proposal"]}}
+                </td>
+                <td class="text-center align-middle">
+                        {{row ["start_date"] }}
+                </td>
+                <td class="text-center align-middle">
+                        {{row ["end_date"] }}
+                </td>
+                <td class="text-center align-middle">
+                        {{row ["status1"] }}
+                </td>
+                <td class="text-center align-middle">
+                        {{row ["status2"] }}
+                </td>
+                <td class="text-center align-middle">
+                        {{row ["days_used1"] }}
+                </td>
+                <td class="text-center align-middle">
+                        {{row ["days_used2"] }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    <tfoot>
+        <tr>
+            <td class="fw-bold text-end bordered align-middle" colspan="6">Days Available</td>
+            <td class="fw-bold text-center bordered align-middle">{{ vacation_days1 }}</td>
+            <td class="fw-bold text-center bordered align-middle">{{ vacation_days2 }}</td>
+        </tr>
+            <td class="fw-bold text-end bordered align-middle" colspan="6">Days Left</td>
+            <td class="fw-bold text-center bordered align-middle">{{ days_left1 }}</td>
+            <td class="fw-bold text-center bordered align-middle">{{ days_left2 }}</td>
+        </tr>
+    </foot>
+</table>
+</div>
+    <div class = mb-5>
+        <select id="delete" name="delete">
+                <option value="" selected disabled>Cancel Vacation</option>
+                {% for row in delete %}
+                    <option>{{row ["vacation"]}}</option>
+                {% endfor %}
+            </select>
+            <button class="btn btn-danger" name="remove" value="remove" type="submit">Remove Vacation</button>
+    </div>
+</form>
+{% endblock %}

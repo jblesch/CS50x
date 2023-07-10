@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Master Data
+{% endblock %}
+
+{% block main %}
+<form action="/master" method="POST">
+    <div class="mb-5">
+        <b>Please fill in the relevant master data to plan your vacations</b>
+        <p></p>
+        <p></p>
+        <p>Please note that you need to fill in the data for each year you want to work on; a reset will wipe the data for all years and users</p>
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" size=50 autofocus class="form-control mx-auto w-auto" id="year" name="year" placeholder="Year" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" size=50 autofocus class="form-control mx-auto w-auto" id="name1" name="name1" placeholder="User Name 1" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" size=50 autofocus class="form-control mx-auto w-auto" id="name2" name="name2" placeholder="User Name 2" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" size=50 autofocus class="form-control mx-auto w-auto" id="vacation_days1" name="vacation_days1" placeholder="Vacation Days User 1" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" size=50 autofocus class="form-control mx-auto w-auto" id="vacation_days2" name="vacation_days2" placeholder="Vacation Days User 2" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" size=50 autofocus class="form-control mx-auto w-auto" id="vacation_days_last_year1" name="vacation_days_last_year1" placeholder="Remaining Leave From Previous Year User 1" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" size=50 autofocus class="form-control mx-auto w-auto" id="vacation_days_last_year2" name="vacation_days_last_year2" placeholder="Remaining Leave From Previous Year User 2" type="text">
+    </div>
+    <div>
+    <button class="btn btn-primary" name="submit" value="submit" type="submit">Submit</button>
+    </div>
+    <div class="mb-3"></div>
+    <button class="btn btn-danger" name="reset" value="reset"  type="submit">Reset</button>
+</form>
+{% endblock %}

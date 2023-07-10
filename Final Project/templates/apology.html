@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block main %}
+    <img alt="{{ top }}" class="border img-fluid" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://www.economist.com/sites/default/files/images/2017/08/blogs/gulliver/20170902_blp501.jpg" title="{{ top }}">
+{% endblock %}

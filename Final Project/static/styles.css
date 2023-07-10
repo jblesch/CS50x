@@ -1,0 +1,14 @@
+/*size of the navbar header*/
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    width: 100%;
+  }
