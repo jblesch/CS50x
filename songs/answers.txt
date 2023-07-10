@@ -1,0 +1,2 @@
+The audio aura of the listener seems to be very averga, at least in terms on valence. The listener likes to listen to neither positive nor negative music. He/she likes to listen to danceable music and also the energy is above average.
+I just looked at the average of this particular listener. It would be far more representative to have a larger dataset of lusteners to compare the three categories energy, valence and danceability to the mean and the median of a larger datasat. The variance and the standard deviation would make the analysis more representative.

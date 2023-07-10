@@ -1,0 +1,11 @@
+sort1 uses: bubble
+
+How do you know?: because the upper and lower bound differ from one another --> (sorted 50000 is siginifcatnly faster than reversed 50000)
+
+sort2 uses: merge
+
+How do you know?: faster than the other two types; also upper and lower bound the same
+
+sort3 uses: selection
+
+How do you know?: times needed are the same per size irrespective of sorting type
