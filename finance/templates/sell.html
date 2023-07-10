@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+<form action="/sell" method="POST">
+    <div class="mb-3">
+        <select class="form-select mx-auto w-auto" autocomplete="off" id="symbol" name="symbol" placeholder="Symbol" type="text">
+            <option disabled="" selected="">Symbol</option>
+            <option value="AMZN">AMZN</option>
+            <option value="NFLX">NFLX</option>
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Shares" type="text">
+    </div>
+    <button class="btn btn-primary" type="submit">Sell</button>
+</form>
+{% endblock %}

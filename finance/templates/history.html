@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<main class="container py-5 text-center">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="text-start">Category</th>
+            <th class="text-end">Symbol</th>
+            <th class="text-end">Shares</th>
+            <th class="text-end">Price</th>
+            <th class="text-end">Date and Time</th>
+            <th class="text-end">User Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-start">
+                {% for row in database %}
+                    <p>{{row ["category"]}}</p>
+                {% endfor %}
+            </td>
+            <td class="text-end">
+                {% for row in database %}
+                    <p>{{row ["symbol"]}}</p>
+                {% endfor %}
+            </td>
+            <td class="text-end">
+                {% for row in database %}
+                    <p>{{row ["shares"] }}</p>
+                {% endfor %}
+            </td>
+            <td class="text-end">
+                {% for row in database %}
+                    <p>{{row ["price"] }}</p>
+                {% endfor %}
+            </td>
+            <td class="text-end">
+                {% for row in database %}
+                    <p>{{row ["datetime"] }}</p>
+                {% endfor %}
+            </td>
+            <td class="text-end">
+                {% for row in database %}
+                    <p>{{row ["user_id"] }}</p>
+                {% endfor %}
+            </td>
+        </tr>
+    </tbody>
+{% endblock %}
